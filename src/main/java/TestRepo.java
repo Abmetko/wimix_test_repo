@@ -1,3 +1,3 @@
 public class TestRepo {
-    int a = 30;
+    int a = 20;
 }
