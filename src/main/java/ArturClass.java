@@ -1,6 +1,7 @@
 public class ArturClass {
 
     public static void main(String[] args) {
-        System.out.println("Hello Yura");
+        String name = "test";
+        System.out.println(name);
     }
 }
