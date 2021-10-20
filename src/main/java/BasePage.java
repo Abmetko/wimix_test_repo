@@ -1,6 +1,6 @@
 import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
 
     public SelenideElement COMPONENT_CONTAINER;
 
