@@ -28,19 +28,16 @@ public class SignInPage extends BasePage {
 
     public void inputPassword() {
         COMPONENT_CONTAINER
-                .$("input[name='password']").shouldBe(Condition.visible,Duration.ofSeconds(30))
+                .$("input[name='password']").shouldBe(Condition.visible, Duration.ofSeconds(30))
                 .setValue("ertertertertertertertet");
     }
 
     public void clickEnterPasswordButton() {
-        COMPONENT_CONTAINER
-                .$(byText("Enter password")).shouldBe(Condition.enabled)
-                .click();
+        clickElement(COMPONENT_CONTAINER
+                .$(byText("Enter password")));
     }
 
     public void waitEnterYourPasswordDialog() {
-        COMPONENT_CONTAINER.$("h2[data-test-id='header-text']")
-                .shouldBe(Condition.visible)
-                .click();
+        clickElement(COMPONENT_CONTAINER.$("h2[data-test-id='header-text']"));
     }
 }

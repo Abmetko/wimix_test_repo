@@ -25,4 +25,9 @@ public abstract class BasePage {
             return false;
         }
     }
+
+    public void clickElement(SelenideElement element) {
+        element.shouldBe(Condition.enabled)
+                .click();
+    }
 }

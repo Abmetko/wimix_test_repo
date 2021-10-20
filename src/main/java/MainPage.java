@@ -1,5 +1,3 @@
-import com.codeborne.selenide.Condition;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage extends BasePage {
@@ -9,9 +7,8 @@ public class MainPage extends BasePage {
     }
 
     public void clickMail() {
-        COMPONENT_CONTAINER
+        clickElement(COMPONENT_CONTAINER
                 .$$("a")
-                .get(1).shouldBe(Condition.enabled)
-                .click();
+                .get(1));
     }
 }

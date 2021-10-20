@@ -25,7 +25,7 @@ public class TestMailRu {
 
     @Order(2)
     @Test
-    public void openSignUpPage() {
+    public void openSignInPage() {
         mainPage.clickMail();
         signInPage = new SignInPage();
         assertTrue(signInPage.waitIsPageOpen());
