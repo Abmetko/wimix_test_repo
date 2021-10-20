@@ -1,13 +1,12 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.junit.jupiter.api.TestInstance;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestMailRu {
 
     private MainPage mainPage;
@@ -17,7 +16,6 @@ public class TestMailRu {
     void setUp() {
         open("https://mail.ru/");
         mainPage = new MainPage();
-        signInPage = new SignInPage();
     }
 
     @Order(1)
@@ -30,6 +28,7 @@ public class TestMailRu {
     @Test
     public void openSignUpPage() {
         mainPage.clickMail();
+        signInPage = new SignInPage();
         assertTrue(signInPage.waitIsPageOpen());
     }
 

@@ -1,13 +1,9 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import java.time.Duration;
 
-@Execution(ExecutionMode.CONCURRENT)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 public abstract class BasePage {
 
     public SelenideElement COMPONENT_CONTAINER;

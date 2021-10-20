@@ -9,6 +9,9 @@ public class MainPage extends BasePage {
     }
 
     public void clickMail() {
-        COMPONENT_CONTAINER.$$("a").get(1).shouldBe(Condition.enabled).click();
+        COMPONENT_CONTAINER
+                .$$("a")
+                .get(1).shouldBe(Condition.enabled)
+                .click();
     }
 }
