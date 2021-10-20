@@ -1,16 +1,28 @@
-public class Testclass {
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+
+import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+public class TestMailRu {
 
     private MainPage mainPage;
     private SignInPage signInPage;
 
-    void set() {
-        open("url");
+    @BeforeAll
+    void setUp() {
+        open("https://mail.ru/");
+        mainPage = new MainPage();
+        signInPage = new SignInPage();
     }
 
     @Order(1)
     @Test
     public void openMainPage() {
-        mainPage = new MainPage();
         assertTrue(mainPage.waitIsPageOpen());
     }
 
@@ -18,7 +30,6 @@ public class Testclass {
     @Test
     public void openSignUpPage() {
         mainPage.clickMail();
-        signInPage = new SignInPage();
         assertTrue(signInPage.waitIsPageOpen());
     }
 
@@ -26,9 +37,7 @@ public class Testclass {
         signInPage.inputAccountName();
         signInPage.clickEnterPasswordButton();
         signInPage.waitEnterYourPasswordDialog();
-
-        //........
-        InpoxPage inpoxPage = new InboxPage();
+        InboxPage inboxPage = new InboxPage();
         assertTrue(inboxPage.waitIsPageOpen());
     }
 }
